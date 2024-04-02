@@ -1,4 +1,4 @@
-package com.test.java10;
+package com.test;
 
 import org.junit.Test;
 
@@ -33,7 +33,7 @@ public class VarTest {
         Collections.addAll(nums ,9 , 10 , 3);
         nums.sort(( o2 ,  o1) -> o2 - o1);
         // Java 11 才开始支持
-        //nums.sort((@Deprecated var o2 , @Deprecated var o1) -> o2 - o1);
+        nums.sort((@Deprecated var o2 , @Deprecated var o1) -> o2 - o1);
         System.out.println(nums);
     }
 }

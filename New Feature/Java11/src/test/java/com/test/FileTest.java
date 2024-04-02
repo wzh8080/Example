@@ -1,8 +1,10 @@
-package com.test.java10;
+package com.test;
 
 import org.junit.Test;
 
-import java.io.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * 新方法：transferTo

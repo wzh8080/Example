@@ -7,7 +7,6 @@
   <modules>
     <module>New Feature/Java8</module>
     <module>New Feature/Java9</module>
-    <module>New Feature/Java10</module>
     <module>New Feature/Java11</module>
     <module>New Feature/Java17</module>
   </modules>
