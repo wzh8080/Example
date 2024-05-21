@@ -6,6 +6,9 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
+/**
+ * 查找日志
+ */
 public class FindKeyLog {
 
     public static void main(String[] args) {

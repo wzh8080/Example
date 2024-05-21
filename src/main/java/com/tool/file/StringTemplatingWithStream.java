@@ -35,19 +35,27 @@ public class StringTemplatingWithStream {
             "  }";
 
     public static void main(String[] args) {
-        String str = "1\tbusinesstype\t业务品种\n" +
-                "2\tcustomername\t客户名称\n" +
-                "3\tbusinesssum\t申请金额（元）\n" +
-                "4\tbankmanager\t银行客户经理\n" +
+        String str = "1\tinputdate       \t申请时间\n" +
+                "2\tbusinesstypename\t产品名称\n" +
+                "3\tbusinesssum     \t申请金额\n" +
+                "4\tbankmanager     \t银行客户经理\n" +
                 "5\tbankmanagerphone\t银行客户经理电话\n" +
-                "6\tmanagername\t业务经理\n" +
-                "7\tmanagerphone\t业务经理电话\n" +
-                "8\tcurrency\t币种\n" +
-                "9\tbusino\t业务号\n" +
-                "10\tflownode\t业务流程节点\n" +
-                "11\tbusinesstypename\t产品名称\n" +
-                "12\tbusistyle\t业务类型\n" +
-                "13\tflagonline\t是否线上业务\n";
+                "6\tmanagername     \t业务经理\n" +
+                "7\tmanagerphone    \t首创项目经理电话\n" +
+                "8\tphaseperson     \t当前阶段联系人\n" +
+                "9\tphasephone      \t当前阶段联系人电话\n" +
+                "10\tflownode        \t业务流程节点\n" +
+                "11\tflagonline      \t是否线上业务\n" +
+                "12\tbusinesstype    \t产品编号\n" +
+                "13\tflagcost        \t是否待缴费\n" +
+                "14\tbusistyle       \t业务类型（融资/工程）（1-融资类，2-工程类）\n" +
+                "15\tbusino          \t业务编号\n" +
+                "16\tbusinesstype\t产品编号\n" +
+                "17\tcustomerid\t客户编号\n" +
+                "18\tcustomername\t客户名称\n" +
+                "19\tpartner\t合作机构用户编号\n" +
+                "20\tmanageuserid\t首创用户编号\n" +
+                "21\ttaskdate\t批量日期\n";
         //run(str,osfTemplate);
         //System.out.println("---------");
         //run(str,respTemplate);
@@ -78,7 +86,7 @@ public class StringTemplatingWithStream {
                         String match = matcher.group(); // 获取整个匹配的"{#数字}"字符串
                         String numberStr = matcher.group(1); // 提取括号中的数字
                         int number = Integer.parseInt(numberStr); // 将字符串转换为整数
-                        r = r.replace(match, pair[number-1]);
+                        r = r.replace(match, pair[number-1].trim());
                     }
                     return r;
                 })
