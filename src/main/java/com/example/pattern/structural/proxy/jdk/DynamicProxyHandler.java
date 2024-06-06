@@ -14,9 +14,14 @@ public class DynamicProxyHandler implements InvocationHandler {
     }
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("买房前准备");
-        Object result = method.invoke(object, args);
-        System.out.println("买房后装修");
+        Object result = null;
+        System.out.println("判断方法名");
+        if ("buyHouse".equals(method.getName())) {
+            System.out.println("method = " + method.getName());
+            System.out.println("买房前准备");
+            result = method.invoke(object, args);
+            System.out.println("买房后装修");
+        }
         return result;
     }
 }

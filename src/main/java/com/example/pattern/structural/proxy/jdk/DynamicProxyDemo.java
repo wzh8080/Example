@@ -11,10 +11,14 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxyDemo {
     public static void main(String[] args) {
+        System.setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         BuyHouse buyHouse = new BuyHouseImpl();
         BuyHouse proxyBuyHouse = (BuyHouse) Proxy.newProxyInstance(BuyHouse.class.getClassLoader(),
                 new Class[]{BuyHouse.class},
                 new DynamicProxyHandler(buyHouse));
-        proxyBuyHouse.buyHosue();
+        proxyBuyHouse.buyHouse();
+        System.out.println("------------");
+        proxyBuyHouse.buyCar();
+        System.out.println("------------");
     }
 }

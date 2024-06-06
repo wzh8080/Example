@@ -5,5 +5,7 @@ package com.example.pattern.structural.proxy.business;
  * @Create 2024/5/22 16:07
  */
 public interface BuyHouse {
-    void buyHosue();
+    void buyHouse();
+    void buyCar();
+
 }

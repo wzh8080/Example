@@ -2,6 +2,7 @@ package com.example.pattern.structural.proxy.cglib;
 
 import com.example.pattern.structural.proxy.business.BuyHouse;
 import com.example.pattern.structural.proxy.business.BuyHouseImpl;
+import org.springframework.cglib.core.DebuggingClassWriter;
 
 /**
  * @Author 56465
@@ -11,7 +12,11 @@ public class ProxyDemo {
     public static void main(String[] args){
         BuyHouse buyHouse = new BuyHouseImpl();
         CglibProxy cglibProxy = new CglibProxy();
-        BuyHouseImpl buyHouseCglibProxy = (BuyHouseImpl) cglibProxy.getInstance(buyHouse);
-        buyHouseCglibProxy.buyHosue();
+        BuyHouseImpl buyHouseCglibProxy = (BuyHouseImpl) cglibProxy.getInstance(buyHouse.getClass());
+        buyHouseCglibProxy.buyHouse();
+        System.out.println("----------------");
+        buyHouseCglibProxy.buyCar();
+        System.out.println("----------------");
+        buyHouseCglibProxy.finalMethod();
     }
 }
