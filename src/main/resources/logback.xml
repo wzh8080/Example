@@ -1,0 +1,6 @@
+<!-- 自动重新加载配置、间隔时间-->
+<configuration scan="true" scanPeriod="30 seconds">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="org.apache.kafka.clients" level="ERROR"/>
+    <logger name="org.apache.kafka.server" level="ERROR" />
+</configuration>

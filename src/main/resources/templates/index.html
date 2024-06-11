@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kafka Message Sender</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $("#sendButton").click(function (e) {
+                e.preventDefault();
+                let message = $("#messageInput").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/send",
+                    data: JSON.stringify({message: message}),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $("#result").text(response.message);
+                    },
+                    error: function (err) {
+                        $("#result").text("Error sending message: " + err.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>Kafka Message Sender</h1>
+<form>
+    <label for="messageInput">Message:</label><br>
+    <input type="text" id="messageInput" name="message"><br>
+    <button type="submit" id="sendButton">Send</button>
+</form>
+<p id="result"></p>
+</body>
+</html>

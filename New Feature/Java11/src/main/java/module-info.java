@@ -4,5 +4,8 @@
  */
 module Java11 {
     requires java.net.http;
-    requires Java9;
+    requires org.jkiss.lm;
+    requires org.jkiss.utils;
+    requires java.datatransfer;
+    requires java.desktop;
 }

@@ -1,0 +1,23 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+  # 确保Spring Boot能够正确处理静态资源
+  mvc:
+    static-path-pattern: /**
+    resources:
+      static-locations: classpath:/static/,classpath:/public/,classpath:/templates/
+  kafka:
+    bootstrap-servers: 192.168.40.132:9092
+    consumer:
+      group-id: my-group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+#yml配置文件修改
+logging:
+  config: classpath:logback.xml
