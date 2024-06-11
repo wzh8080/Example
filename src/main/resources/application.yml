@@ -17,7 +17,12 @@ server:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
+db:
+  type: mysql
+
+
 
 #yml配置文件修改
 logging:
   config: classpath:logback.xml
+
