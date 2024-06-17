@@ -9,6 +9,7 @@ public class SynchronizedAdd {
 
     public synchronized void add(int value) {
         sum += value;
+        System.out.println(Thread.currentThread().getName() + ": " + sum);
     }
 
     public int getSum() {
