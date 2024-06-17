@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
  * Author:King
  * Create:2024/6/9 16:03
  */
-@RestController
+//@RestController
 public class KafkaController {
 
-    @Autowired
+    //@Autowired
     private KafkaProducerService kafkaProducerService;
 
     @PostMapping("/send")

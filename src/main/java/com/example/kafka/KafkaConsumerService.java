@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  * Author:King
  * Create:2024/6/9 15:58
  */
-@Service
+//@Service
 public class KafkaConsumerService {
     @KafkaListener(topics = "my-topic", groupId = "my-group-id")
     public void listen(String message) {

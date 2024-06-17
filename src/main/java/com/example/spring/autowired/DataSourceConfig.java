@@ -8,10 +8,9 @@ import org.springframework.context.annotation.*;
  * @Author 56465
  * @Create 2024/6/11 15:46
  */
-@Configuration
 public class DataSourceConfig {
 
-    @Value("${db.type}")
+    //@Value("${db.type}")
     private String dbType;
 
     // 根据db.type的值动态决定主数据源
