@@ -8,12 +8,6 @@ import org.junit.Test;
  */
 public class SynTest {
     @Test
-    public void test_02(){
-        System.out.println("test_02");
-    }
-
-
-    @Test
     public void test_01() throws InterruptedException {
         SynchronizedAdd adder = new SynchronizedAdd();
         Thread[] threads = new Thread[10];
@@ -32,7 +26,6 @@ public class SynTest {
             System.out.println("累加结果：" + adder.getSum());
             thread.join();
         }
-
-        System.out.println("最终累加结果：" + adder.getSum());
+        em.out.println("最终累加结果：" + adder.getSum());
     }
 }
