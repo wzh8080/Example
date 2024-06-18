@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
  * @Author 56465
  * @Create 2024/6/11 15:18
  */
-@Service
-@RequiredArgsConstructor
+//@Service
+//@RequiredArgsConstructor
 public class AService {
-    private final CService cService;
+    private final CService cService=null;
 }
