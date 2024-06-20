@@ -9,7 +9,7 @@ import org.junit.Test;
  * @Author 56465
  * @Create 2024/6/20 15:56
  */
-public class MainTest {
+public class JavaMainTest {
 
     /**
      * 流式写法中，this 是外部类的对象，所以 流式写法 只能在非静态方法中写this（外部类）
