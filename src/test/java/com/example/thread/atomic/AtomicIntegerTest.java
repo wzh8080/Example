@@ -3,6 +3,8 @@ package com.example.thread.atomic;
 import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicIntegerArray;
+import java.util.concurrent.atomic.AtomicStampedReference;
 
 public class AtomicIntegerTest {
     int b = 0;
@@ -33,6 +35,8 @@ public class AtomicIntegerTest {
             e.printStackTrace();
         }
 
+        AtomicIntegerArray array = new AtomicIntegerArray(10);
+
         System.out.println("a="+a);
         System.out.println("b="+b);
     }
@@ -48,6 +52,5 @@ public class AtomicIntegerTest {
         int b = 0;
         b++;
         System.out.println("b = " + b);
-
     }
 }

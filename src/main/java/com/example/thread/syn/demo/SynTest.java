@@ -26,6 +26,6 @@ public class SynTest {
             System.out.println("累加结果：" + adder.getSum());
             thread.join();
         }
-        em.out.println("最终累加结果：" + adder.getSum());
+        System.out.println("最终累加结果：" + adder.getSum());
     }
 }

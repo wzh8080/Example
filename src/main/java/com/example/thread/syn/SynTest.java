@@ -29,6 +29,15 @@ public class SynTest {
         t1.start();
         t2.start();
 
+        t1.interrupt();
+        Thread.interrupted();
+
+        t1.isInterrupted();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void test_02(){
         Thread t1 = new Thread("t1") {
