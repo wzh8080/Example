@@ -77,7 +77,7 @@ public class StringTemplatingWithStream {
     }
 
     private static List<String> generateStringsFromTemplate(List<String[]> keyValuePairs, String template) {
-        Pattern pattern = Pattern.compile("\\{#(\\d+)\\}");
+        Pattern pattern = Pattern.compile("\\{#(\\d+)}");
         return keyValuePairs.stream()
                 .map((pair) -> {
                     String r = template;
