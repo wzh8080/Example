@@ -1,12 +1,16 @@
 package com.example;
 
+import java.math.BigDecimal;
+
 /**
  * Author:King
  * Create:2024/6/13 12:33
  */
 public class Demo extends Father{
     public static void main(String[] args) {
-
+        BigDecimal d = new BigDecimal("123,123.12");
+        System.out.println(d.toString());
+        System.out.println(d.toPlainString());
     }
 
     public static void test1(){
