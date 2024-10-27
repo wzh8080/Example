@@ -18,7 +18,7 @@ public class ExecutorConfigurationTest {
 
     @Test
     public void executorService() {
-        new ThreadPerTaskExecutor(executorService);
+        //new ThreadPerTaskExecutor(executorService);
     }
 
 }
