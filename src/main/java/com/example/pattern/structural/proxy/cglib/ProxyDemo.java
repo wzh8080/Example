@@ -11,7 +11,7 @@ import org.springframework.cglib.core.DebuggingClassWriter;
 public class ProxyDemo {
     public static void main(String[] args){
         BuyHouse buyHouse = new BuyHouseImpl();
-        CglibProxy cglibProxy = new CglibProxy();
+        com.example.pattern.structural.proxy.cglib.CglibProxy cglibProxy = new com.example.pattern.structural.proxy.cglib.CglibProxy();
         BuyHouseImpl buyHouseCglibProxy = (BuyHouseImpl) cglibProxy.getInstance(buyHouse.getClass());
         buyHouseCglibProxy.buyHouse();
         System.out.println("----------------");

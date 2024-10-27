@@ -2,6 +2,7 @@ package com.test.stream;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
@@ -249,6 +250,16 @@ public class StreamTest {
                 })
                 .reduce(0, Integer::sum);
         System.out.println("count = " + count);
+    }
+
+    @Test
+    public void test16_1(){
+        BigDecimal d1 = new BigDecimal("6");
+        BigDecimal d2 = new BigDecimal("2");
+        BigDecimal r = Stream.of(d1, d2)
+                .map(Objects::requireNonNull)
+                .reduce(BigDecimal::subtract).get();
+        System.out.println("r = " + r);
     }
     @Test
     public void test17() {
