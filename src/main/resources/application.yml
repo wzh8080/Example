@@ -29,3 +29,5 @@ kafka:
   topic: test-spring-topic-1
   group-id: test-spring-group-1
 
+pets:  -dog  -cat  -pig
+# https://youtrack.jetbrains.com/issue/IJPL-67737/Docker-compose-include-property-not-recognized
