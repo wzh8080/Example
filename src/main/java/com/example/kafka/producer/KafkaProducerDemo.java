@@ -34,7 +34,7 @@ public class KafkaProducerDemo {
             // 发送消息
             producer.send(record);
             try {
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

@@ -2,12 +2,15 @@
 server:
   port: 8080
   # 确保Spring Boot能够正确处理静态资源
-  mvc:
-    static-path-pattern: /**
-    resources:
-      static-locations: classpath:/static/,classpath:/public/,classpath:/templates/
+#  mvc:
+#    static-path-pattern: /**
+#    resources:
+#      static-locations: classpath:/static/,classpath:/public/,classpath:/templates/
+spring:
+  config:
+    activate:
+      on-profile: dev
   kafka:
-    bootstrap-servers: 192.168.40.132:9092
     consumer:
       group-id: my-group-id
       auto-offset-reset: earliest
@@ -17,12 +20,12 @@ server:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-db:
-  type: mysql
-
-
 
 #yml配置文件修改
 logging:
   config: classpath:logback.xml
+
+kafka:
+  topic: test-spring-topic-1
+  group-id: test-spring-group-1
 
