@@ -1,5 +1,6 @@
 package com.app.kafka.demo.controller;
 
+import com.app.kafka.config.KafkaConfiguration;
 import com.app.kafka.service.KafkaExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,11 +21,11 @@ public class KafkaDemoController {
     @Autowired
     private KafkaExecutor kafkaExecutor;
 
-    @Value("${kafka.topic}")
-    private String topic;
+    //@Value("${kafka.topic}")
+    //private String topic;
 
     @RequestMapping(value = "/send", method = {RequestMethod.POST})
     public void sendMessage(@RequestParam String message) {
-        kafkaExecutor.send(topic, message);
+        kafkaExecutor.send(KafkaConfiguration.TOPIC, message);
     }
 }

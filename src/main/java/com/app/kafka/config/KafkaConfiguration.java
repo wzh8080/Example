@@ -17,6 +17,7 @@ import org.springframework.kafka.support.converter.RecordMessageConverter;
 @Configuration
 @EnableConfigurationProperties(KafkaProperties.class)
 public class KafkaConfiguration {
+    public static final String TOPIC = "test-spring-topic-1";
     private final KafkaProperties kafkaProperties;
     private final RecordMessageConverter messageConverter;
 

@@ -1,5 +1,6 @@
 package com.app.kafka.demo.listener;
 
+import com.app.kafka.config.KafkaConfiguration;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -15,8 +16,10 @@ import java.util.List;
  */
 @Component
 public class KafkaConsumerListener {
+
     @KafkaListener(id = "my-group-id",
-            topics = "${kafka.topic}",
+            //topics = "${kafka.topic}",
+            topics = KafkaConfiguration.TOPIC,
             groupId = "${kafka.group-id}")
     public void onMessage(List<ConsumerRecord> recordList, Acknowledgment ack){
         System.out.println("消费者监听... Start");

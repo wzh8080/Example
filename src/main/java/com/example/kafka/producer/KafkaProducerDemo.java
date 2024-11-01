@@ -40,7 +40,6 @@ public class KafkaProducerDemo {
             }
         }
 
-
         // 关闭生产者
         producer.close();
         System.out.println("生产者关闭");
