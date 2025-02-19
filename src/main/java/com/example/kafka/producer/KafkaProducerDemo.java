@@ -1,6 +1,6 @@
 package com.example.kafka.producer;
 
-import com.tool.data.DateUtil;
+import com.util.DateUtil;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;

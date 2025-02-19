@@ -10,6 +10,7 @@ public class DemoTest {
     @Test
     public void name() {
         System.out.println("hello world 2");
+
     }
 
     @Test

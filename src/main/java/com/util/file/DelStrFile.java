@@ -1,4 +1,4 @@
-package com.tool.file;
+package com.util.file;
 
 import java.io.*;
 

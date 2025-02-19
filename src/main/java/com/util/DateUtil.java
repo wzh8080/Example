@@ -1,4 +1,4 @@
-package com.tool.data;
+package com.util;
 
 import java.time.Duration;
 import java.time.LocalDate;
