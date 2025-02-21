@@ -20,12 +20,13 @@ public class Authorization {
             String key = "1300386381676510969";
             String keySecret = "65d6265b5c2b484da1b69e3ec8d94942";
             Map<String,Object> map = new HashMap();
-            map.put("pageNo",1);
-            map.put("pageSize",10);
+            map.put("pageNo","1");
+            map.put("pageSize","10");
             String body = JSON.toJSONString(map);
             String ContentMd5 = getDigest(body);
-            String Date = getGMTTime();
-            String path = "/v1/api/inverterList";
+            //String Date = getGMTTime();
+            String Date = "Thu, 20 Feb 2025 02:32:23 GMT";
+            String path = "/v1/api/userStationList";
             String param = "POST" + "\n" + ContentMd5 + "\n" + "application/json" + "\n" + Date + "\n" + path;
             String sign = HmacSHA1Encrypt(param, keySecret);
 
@@ -64,15 +65,10 @@ public class Authorization {
     public static String HmacSHA1Encrypt(String encryptText, String KeySecret) throws Exception
     {
         byte[] data=KeySecret.getBytes("UTF-8");
-        //鏍规嵁缁欏畾鐨勫瓧鑺傛暟缁勬瀯閫犱竴涓瘑閽�,绗簩鍙傛暟鎸囧畾涓€涓瘑閽ョ畻娉曠殑鍚嶇О
         SecretKey secretKey = new SecretKeySpec(data, "HmacSHA1");
-        //鐢熸垚涓€涓寚瀹� Mac 绠楁硶 鐨� Mac 瀵硅薄
         Mac mac = Mac.getInstance("HmacSHA1");
-        //鐢ㄧ粰瀹氬瘑閽ュ垵濮嬪寲 Mac 瀵硅薄
         mac.init(secretKey);
-
         byte[] text = encryptText.getBytes("UTF-8");
-        //瀹屾垚 Mac 鎿嶄綔
         byte[] result = mac.doFinal(text);
         return Base64.encodeBase64String(result);
     }
